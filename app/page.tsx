@@ -25,10 +25,14 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 px-6 lg:px-8">
+      <section className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden hero-background">
         <div className="absolute inset-0 subtle-grid -z-10"></div>
-        <div className="absolute top-20 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/3 rounded-full blur-3xl -z-10"></div>
+        {/* Top right accent glow */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl -z-10 accent-ring"></div>
+        {/* Bottom left accent glow */}
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full blur-3xl -z-10" style={{background: 'radial-gradient(circle, rgba(51, 153, 255, 0.15) 0%, transparent 70%)'}}></div>
+        {/* Center decorative element */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl blur-3xl -z-10" style={{background: 'radial-gradient(ellipse 150% 100% at 50% 50%, rgba(51, 153, 255, 0.08) 0%, transparent 50%)'}}></div>
 
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-6">
@@ -72,7 +76,8 @@ export default function Home() {
       </section>
 
       {/* Capabilities Section */}
-      <section id="capabilities" className="py-32 px-6 lg:px-8 border-t premium-border">
+      <section id="capabilities" className="py-32 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 space-y-4">
             <div className="flex items-center gap-3">
@@ -111,7 +116,7 @@ export default function Home() {
                 description: 'Deploy as your own platform or integrate into existing solutions with full customization options.',
               },
             ].map((feature, i) => (
-              <div key={i} className="space-y-4">
+              <div key={i} className="space-y-4 p-6 rounded-lg glass-premium hover:border-accent/30 transition-all duration-300">
                 <h3 className="text-xl font-medium leading-relaxed">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
@@ -121,7 +126,9 @@ export default function Home() {
       </section>
 
       {/* Enterprise Section */}
-      <section id="enterprise" className="py-32 px-6 lg:px-8 border-t premium-border">
+      <section id="enterprise" className="py-32 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 blur-3xl -z-10" style={{background: 'radial-gradient(circle, rgba(51, 153, 255, 0.12) 0%, transparent 70%)'}}></div>
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="space-y-8">
@@ -163,10 +170,11 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="premium-border rounded-lg p-12 h-full flex items-center justify-center bg-muted/20">
+            <div className="rounded-lg p-12 h-full flex items-center justify-center glass-premium">
               <div className="text-center space-y-4">
                 <div className="text-muted-foreground text-sm uppercase tracking-widest">Enterprise Dashboard</div>
-                <div className="w-48 h-32 mx-auto bg-gradient-to-b from-accent/20 to-transparent rounded"></div>
+                <div className="w-48 h-32 mx-auto bg-gradient-to-b from-accent/30 via-accent/10 to-transparent rounded blur-sm"></div>
+                <div className="text-xs text-muted-foreground/50 pt-4">Advanced visualization & analytics</div>
               </div>
             </div>
           </div>
@@ -174,8 +182,10 @@ export default function Home() {
       </section>
 
       {/* Security Section */}
-      <section id="security" className="py-32 px-6 lg:px-8 border-t premium-border">
-        <div className="max-w-6xl mx-auto space-y-16">
+      <section id="security" className="py-32 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-96 blur-3xl -z-10" style={{background: 'radial-gradient(ellipse 120% 100% at 50% 100%, rgba(51, 153, 255, 0.1) 0%, transparent 60%)'}}></div>
+        <div className="max-w-6xl mx-auto space-y-16 relative z-10">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="line-separator"></div>
@@ -192,7 +202,7 @@ export default function Home() {
               { title: 'Compliance', desc: 'HIPAA, GDPR, SOC 2 Type II, and more certifications' },
               { title: 'Uptime', desc: '99.9% SLA with multi-region redundancy and disaster recovery' },
             ].map((item, i) => (
-              <div key={i} className="premium-border rounded-lg p-8 space-y-4 bg-muted/10">
+              <div key={i} className="rounded-lg p-8 space-y-4 glass-premium hover:border-accent/40 transition-all duration-300">
                 <h3 className="text-lg font-medium">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
@@ -202,8 +212,12 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-6 lg:px-8 border-t premium-border">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section className="py-32 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+        <div className="absolute inset-0 subtle-grid -z-10"></div>
+        <div className="absolute -top-64 right-1/4 w-96 h-96 blur-3xl -z-10" style={{background: 'radial-gradient(circle, rgba(51, 153, 255, 0.15) 0%, transparent 70%)'}}></div>
+        <div className="absolute -bottom-64 left-1/4 w-96 h-96 blur-3xl -z-10" style={{background: 'radial-gradient(circle, rgba(51, 153, 255, 0.1) 0%, transparent 70%)'}}></div>
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <h2 className="text-5xl lg:text-6xl font-light">
             Transform your workforce
           </h2>
@@ -222,7 +236,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t premium-border py-16 px-6 lg:px-8">
+      <footer className="relative py-16 px-6 lg:px-8 border-t premium-border overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
