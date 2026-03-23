@@ -1,255 +1,273 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <main className="min-h-screen bg-background overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-accent to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-foreground font-bold text-lg">S</span>
-            </div>
-            <span className="text-xl font-bold gradient-text">ShiftSync AI</span>
+      <nav className="fixed top-0 w-full z-50 border-b premium-border bg-background/70 backdrop-blur-2xl">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="text-2xl font-light tracking-tighter">ShiftSync</div>
+            <div className="text-muted-foreground text-xs tracking-widest uppercase">AI</div>
           </div>
-          <div className="hidden md:flex gap-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#benefits" className="text-muted-foreground hover:text-foreground transition-colors">Benefits</a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+          <div className="hidden md:flex gap-12">
+            <a href="#product" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">Product</a>
+            <a href="#capabilities" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">Capabilities</a>
+            <a href="#enterprise" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">Enterprise</a>
+            <a href="#security" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">Security</a>
           </div>
-          <button className="px-6 py-2 bg-accent text-background rounded-lg font-semibold hover:opacity-90 transition-opacity">
+          <button className="px-5 py-2 text-sm bg-accent text-background rounded hover:bg-accent/90 transition-all duration-200 font-medium">
             Get Started
           </button>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        {/* Gradient background elements */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
+      <section className="relative pt-40 pb-32 px-6 lg:px-8">
+        <div className="absolute inset-0 subtle-grid -z-10"></div>
+        <div className="absolute top-20 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/3 rounded-full blur-3xl -z-10"></div>
 
-        <div className="text-center space-y-8">
-          <div className="inline-block px-4 py-2 bg-muted border border-border rounded-full text-sm text-accent">
-            ✨ Powered by Advanced AI
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="line-separator"></div>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">Next-generation platform</span>
+            </div>
+
+            <h1 className="text-7xl lg:text-8xl font-light leading-tight max-w-5xl">
+              Workforce optimization
+              <br />
+              <span className="text-accent">redefined</span>
+            </h1>
+
+            <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed pt-4">
+              Enterprise-grade shift scheduling powered by advanced algorithms. Reduce operational costs, improve team productivity, and enhance employee satisfaction with AI-driven workforce management.
+            </p>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-            Smart Shift
-            <br />
-            <span className="gradient-text">Scheduling</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Automate your workforce scheduling with AI. Optimize team coverage, reduce labor costs, and improve employee satisfaction with intelligent shift management.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <button
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="px-8 py-4 bg-accent text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all transform hover:scale-105 text-lg"
-            >
-              Start Free Trial
+          <div className="flex gap-4 pt-8">
+            <button className="px-6 py-3 bg-accent text-background rounded hover:bg-accent/90 transition-all duration-200 font-medium text-sm">
+              Request Demo
             </button>
-            <button className="px-8 py-4 bg-muted border border-border text-foreground rounded-lg font-semibold hover:bg-muted/80 transition-colors text-lg">
-              Watch Demo
+            <button className="px-6 py-3 premium-border rounded hover:bg-muted/40 transition-all duration-200 font-medium text-sm">
+              Explore Platform
             </button>
           </div>
-
-          <p className="text-sm text-muted-foreground">
-            No credit card required • 14 days free • Full access to all features
-          </p>
         </div>
 
         {/* Dashboard Preview */}
-        <div className="mt-20 relative">
-          <div className="glass-effect rounded-2xl p-1 overflow-hidden">
-            <div className="bg-muted rounded-xl p-8">
-              <div className="grid grid-cols-12 gap-4">
-                {/* Left sidebar */}
-                <div className="col-span-3 space-y-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-10 bg-background rounded-lg"></div>
-                  ))}
-                </div>
-                {/* Main content */}
-                <div className="col-span-9 space-y-4">
-                  <div className="h-8 bg-background rounded-lg w-1/3"></div>
-                  <div className="grid grid-cols-3 gap-4">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="bg-background rounded-lg p-4 space-y-3">
-                        <div className="h-6 bg-border rounded w-2/3"></div>
-                        <div className="h-4 bg-border rounded w-1/2"></div>
-                        <div className="h-4 bg-border rounded w-1/3"></div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    {[1, 2].map((i) => (
-                      <div key={i} className="bg-background rounded-lg p-4 h-32"></div>
-                    ))}
-                  </div>
-                </div>
+        <div className="mt-24 max-w-6xl mx-auto">
+          <div className="premium-border rounded-lg p-1 overflow-hidden">
+            <div className="bg-muted/30 rounded-lg aspect-video flex items-center justify-center border premium-border">
+              <div className="text-center space-y-4">
+                <div className="text-muted-foreground text-sm uppercase tracking-widest">Dashboard Preview</div>
+                <div className="w-64 h-40 mx-auto bg-gradient-to-b from-accent/10 to-transparent rounded"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border">
+      {/* Capabilities Section */}
+      <section id="capabilities" className="py-32 px-6 lg:px-8 border-t premium-border">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">Powerful Features</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to manage your workforce efficiently
-            </p>
+          <div className="mb-16 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="line-separator"></div>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">Capabilities</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-light">
+              Built for enterprise scale
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-12">
             {[
               {
-                title: 'AI-Powered Scheduling',
-                description: 'Intelligent algorithms that optimize shifts based on employee availability, skills, and preferences.',
-                icon: '🤖',
+                title: 'Intelligent Optimization',
+                description: 'Machine learning algorithms continuously learn from your workforce patterns to improve scheduling accuracy and reduce manual intervention.',
               },
               {
-                title: 'Real-time Adjustments',
-                description: 'Instantly handle call-outs, swaps, and schedule changes with automated conflict resolution.',
-                icon: '⚡',
+                title: 'Real-time Intelligence',
+                description: 'Instantly adapt to changes with automated shift adjustments, conflict resolution, and predictive analytics.',
               },
               {
-                title: 'Employee Portal',
-                description: 'Let employees view schedules, request time off, and swap shifts seamlessly.',
-                icon: '👥',
+                title: 'Compliance Engine',
+                description: 'Automatically enforce labor laws, regulations, and company policies across all scheduling decisions.',
               },
               {
-                title: 'Cost Optimization',
-                description: 'Reduce overtime and labor costs while maintaining optimal team coverage.',
-                icon: '💰',
+                title: 'Integration Hub',
+                description: 'Seamless connectivity with your existing HR systems, payroll platforms, and communication tools.',
               },
               {
-                title: 'Analytics Dashboard',
-                description: 'Gain insights into labor costs, productivity, and team efficiency metrics.',
-                icon: '📊',
+                title: 'Advanced Analytics',
+                description: 'Deep insights into labor costs, productivity metrics, team efficiency, and workforce trends.',
               },
               {
-                title: 'Compliance Ready',
-                description: 'Automatically ensure labor law compliance and generate required reports.',
-                icon: '✅',
+                title: 'White-Label Ready',
+                description: 'Deploy as your own platform or integrate into existing solutions with full customization options.',
               },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="glass-effect rounded-xl p-8 hover:border-accent/50 transition-colors group hover:bg-muted/80"
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+              <div key={i} className="space-y-4">
+                <h3 className="text-xl font-medium leading-relaxed">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border">
+      {/* Enterprise Section */}
+      <section id="enterprise" className="py-32 px-6 lg:px-8 border-t premium-border">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">Why Choose ShiftSync?</h2>
-              <ul className="space-y-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="line-separator"></div>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground">Impact</span>
+                </div>
+                <h2 className="text-5xl lg:text-6xl font-light">
+                  Measurable outcomes
+                </h2>
+              </div>
+              
+              <div className="space-y-8">
                 {[
-                  '40% reduction in scheduling time',
-                  '25% lower labor costs on average',
-                  '95% employee satisfaction rate',
-                  'Seamless integration with your tools',
-                  '24/7 dedicated support',
-                  'SOC 2 Type II compliant',
+                  { metric: '40%', label: 'Reduction in scheduling time' },
+                  { metric: '25%', label: 'Lower labor costs on average' },
+                  { metric: '95%', label: 'Employee satisfaction rate' },
+                ].map((item, i) => (
+                  <div key={i} className="border-l premium-border pl-6 py-2">
+                    <div className="text-4xl font-light text-accent mb-1">{item.metric}</div>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="space-y-3 pt-4">
+                {[
+                  'SOC 2 Type II certified',
+                  'Enterprise-grade security',
+                  'Dedicated support team',
+                  '99.9% uptime SLA',
                 ].map((benefit, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    </div>
-                    <span className="text-lg">{benefit}</span>
+                  <li key={i} className="flex items-center gap-3 text-sm">
+                    <div className="w-1 h-1 bg-accent rounded-full"></div>
+                    <span className="text-muted-foreground">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="glass-effect rounded-2xl p-8 h-96 flex items-center justify-center">
-              <p className="text-muted-foreground text-center">Dashboard Preview</p>
+
+            <div className="premium-border rounded-lg p-12 h-full flex items-center justify-center bg-muted/20">
+              <div className="text-center space-y-4">
+                <div className="text-muted-foreground text-sm uppercase tracking-widest">Enterprise Dashboard</div>
+                <div className="w-48 h-32 mx-auto bg-gradient-to-b from-accent/20 to-transparent rounded"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      {/* Security Section */}
+      <section id="security" className="py-32 px-6 lg:px-8 border-t premium-border">
+        <div className="max-w-6xl mx-auto space-y-16">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="line-separator"></div>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">Security & Compliance</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-light">
+              Enterprise security you can trust
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              { title: 'Data Protection', desc: 'End-to-end encryption with industry-leading security protocols' },
+              { title: 'Compliance', desc: 'HIPAA, GDPR, SOC 2 Type II, and more certifications' },
+              { title: 'Uptime', desc: '99.9% SLA with multi-region redundancy and disaster recovery' },
+            ].map((item, i) => (
+              <div key={i} className="premium-border rounded-lg p-8 space-y-4 bg-muted/10">
+                <h3 className="text-lg font-medium">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-32 px-6 lg:px-8 border-t premium-border">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl sm:text-5xl font-bold">Ready to Transform Your Scheduling?</h2>
-          <p className="text-xl text-muted-foreground">
-            Join hundreds of companies already using ShiftSync AI to optimize their workforce.
+          <h2 className="text-5xl lg:text-6xl font-light">
+            Transform your workforce
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Join enterprise teams using ShiftSync to unlock the full potential of their workforce.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-accent text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all transform hover:scale-105 text-lg">
-              Get Started Free
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <button className="px-8 py-3 bg-accent text-background rounded hover:bg-accent/90 transition-all duration-200 font-medium">
+              Start Your Trial
             </button>
-            <button className="px-8 py-4 bg-muted border border-border text-foreground rounded-lg font-semibold hover:bg-muted/80 transition-colors text-lg">
-              Schedule Demo
+            <button className="px-8 py-3 premium-border rounded hover:bg-muted/40 transition-all duration-200 font-medium">
+              Contact Sales
             </button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="border-t premium-border py-16 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="font-bold mb-4">Product</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Security</a></li>
+              <h3 className="text-sm font-medium mb-6 uppercase tracking-widest">Product</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Features</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Pricing</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Security</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">API</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Company</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
+              <h3 className="text-sm font-medium mb-6 uppercase tracking-widest">Company</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">About</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Blog</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Careers</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Contact</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Legal</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
+              <h3 className="text-sm font-medium mb-6 uppercase tracking-widest">Legal</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Privacy</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Terms</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Cookies</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Compliance</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Follow</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">GitHub</a></li>
+              <h3 className="text-sm font-medium mb-6 uppercase tracking-widest">Connect</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Twitter</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">GitHub</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors duration-200">Discord</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between">
-            <p className="text-muted-foreground">&copy; 2024 ShiftSync AI. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 sm:mt-0">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Status</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Support</a>
+          <div className="border-t premium-border pt-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="text-lg font-light">ShiftSync</div>
+              <div className="text-xs text-muted-foreground tracking-widest uppercase">AI</div>
             </div>
+            <p className="text-sm text-muted-foreground">&copy; 2024 ShiftSync. All rights reserved.</p>
           </div>
         </div>
       </footer>
